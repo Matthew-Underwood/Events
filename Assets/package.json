@@ -1,0 +1,17 @@
+{
+  "name": "munderwood.events",
+  "displayName": "Events",
+  "version": "0.0.1",
+  "unity": "2019.2",
+  "description": "Events",
+  "keywords": [
+    "unity"
+  ],
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Unity-Technologies/Unity.Mathematics",
+    "revision":""
+  }
+}
