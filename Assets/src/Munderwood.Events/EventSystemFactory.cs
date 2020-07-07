@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace Munderwood.Events.Bootstrap
+namespace Munderwood.Events
 {
-    public class Init : MonoBehaviour
+    public class EventSystemFactory
     {
-        public void Start()
+        public void Create()
         {
             Object.Instantiate(Resources.Load<GameObject>("EventSystem"));
         }

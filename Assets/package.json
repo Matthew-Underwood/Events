@@ -8,10 +8,11 @@
     "unity"
   ],
   "dependencies": {
+    "munderwood.di" : "0.0.1"    
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Unity-Technologies/Unity.Mathematics",
+    "url": "",
     "revision":""
   }
 }

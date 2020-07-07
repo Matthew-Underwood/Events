@@ -1,6 +1,6 @@
 using UnityEngine.EventSystems;
 
-namespace Munderwood.Ui
+namespace Munderwood.Events
 {
     public interface IPointerData
     {

@@ -1,10 +1,12 @@
 {
-    "name": "Munderwood.Events.Runtime",
-    "references": [],
+    "name": "Munderwood.Events",
+    "references": [
+        "GUID:f66903250a198b64e9fa31a33ea44b3e"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
+    "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [
         "JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll"
