@@ -1,7 +1,6 @@
-
 using System;
 using System.Reflection;
-using Munderwood.Events.Click;
+using Munderwood.Events.Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -25,11 +24,11 @@ namespace Munderwood.Events
         
         public void AddListener (PointerEventData pointerEventData)
         {
-            ClickEvent<PointerEventData> eventClick = new ClickEvent<PointerEventData>();
-            eventClick.AddListener(
+            Event<PointerEventData> @event = new Event<PointerEventData>();
+            @event.AddListener(
                 (PointerEventData a) => { method.Invoke(_controller.GetComponent(_controllerType), new object[] {a});
                 });
-            pointerEvent = eventClick;
+            pointerEvent = @event;
         }
         
         public void AssignValues (PointerEventData pointerEventData)
