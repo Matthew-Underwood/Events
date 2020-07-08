@@ -1,20 +1,22 @@
 using System;
 using UnityEngine.Events;
 
-namespace Munderwood.Events.Click
+namespace Munderwood.Events.Event
 {
     [Serializable]
-    public class ClickEvent<T> : UnityEvent<T>, IEventOneArg
+    public class Event<T> : UnityEvent<T>, IEvent
     {
+        public object[] Values { get; set; }
+
         public void AddListener(object call)
         {
             var eventToAdd = (UnityAction<T>) call;
             base.AddListener(eventToAdd);
         }
 
-        public void Invoke(object invoking)
+        public void Invoke()
         {
-            var arg = (T) invoking;
+            var arg = (T) Values[0];
             base.Invoke(arg);
         }
     }

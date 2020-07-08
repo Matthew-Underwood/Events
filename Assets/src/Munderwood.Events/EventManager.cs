@@ -1,6 +1,6 @@
 using System;
 using System.Reflection;
-using Munderwood.Events.Click;
+using Munderwood.Events.Event;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,10 +13,6 @@ namespace Munderwood.Events
         private readonly Type _controllerType;
         private object[] _arguments;
         private UnityEvent _clickEvent;
-        private IEventFourArgs _clickEventFourArgs;
-        private IEventOneArg _clickEventOneArg;
-        private IEventThreeArgs _clickEventThreeArgs;
-        private IEventTwoArgs _clickEventTwoArgs;
 
 
         public EventManager(GameObject controller, Type controllerType, string methodName)
@@ -30,18 +26,18 @@ namespace Munderwood.Events
 
         public void AddListener()
         {
-            var eventClick = new UnityEvent();
-            eventClick.AddListener(
+            var eventAction = new Event();
+            eventAction.AddListener(
                 () =>
                 {
                     _controllerMethod.Invoke(_controllerGameObject.GetComponent(_controllerType), new object[] { });
                 });
-            _clickEvent = eventClick;
+            _clickEvent = eventAction;
         }
 
         public void AddListener<T>(T val)
         {
-            var eventClick = new ClickEvent<T>();
+            var eventClick = new Event<T>();
             eventClick.AddListener(
                 a =>
                 {
@@ -53,7 +49,7 @@ namespace Munderwood.Events
 
         public void AddListener<T, T2>(T val, T2 val2)
         {
-            var eventClick = new ClickEvent<T, T2>();
+            var eventClick = new Event<T, T2>();
             eventClick.AddListener(
                 (a, b) =>
                 {
@@ -65,7 +61,7 @@ namespace Munderwood.Events
 
         public void AddListener<T, T2, T3>(T val, T2 val2, T3 val3)
         {
-            var eventClick = new ClickEvent<T, T2, T3>();
+            var eventClick = new Event<T, T2, T3>();
             eventClick.AddListener(
                 (a, b, c) =>
                 {
@@ -78,7 +74,7 @@ namespace Munderwood.Events
 
         public void AddListener<T, T2, T3, T4>(T val, T2 val2, T3 val3, T4 val4)
         {
-            var eventClick = new ClickEvent<T, T2, T3, T4>();
+            var eventClick = new Event<T, T2, T3, T4>();
             eventClick.AddListener(
                 (a, b, c, d) =>
                 {
